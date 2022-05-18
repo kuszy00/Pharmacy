@@ -8,7 +8,7 @@ using Pharmacy.Data;
 namespace Pharmacy.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20220413135634_InitialCreate")]
+    [Migration("20220507191155_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,7 +29,7 @@ namespace Pharmacy.Data.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Descripton")
+                    b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
