@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pharmacy.Data;
 
 namespace Pharmacy.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220616175401_IdentityAdded")]
+    partial class IdentityAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,15 +46,15 @@ namespace Pharmacy.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "60c51de0-ca9b-4e1b-b0b6-4c13d59a662f",
-                            ConcurrencyStamp = "e06c3657-55c9-45f3-b4bb-94b081fc189c",
+                            Id = "27e00506-482b-4160-81b4-bfc2c96d4637",
+                            ConcurrencyStamp = "479a72ff-6b9b-44c7-8270-dfdc2106af44",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
-                            Id = "a2dcb4a3-f862-4e29-abc9-f4e4db471920",
-                            ConcurrencyStamp = "4acbf5b7-056d-4e71-a529-ae9f8c807ce2",
+                            Id = "077a9759-5f42-4959-b209-e80d1fa02b19",
+                            ConcurrencyStamp = "1d8fbcd5-0004-45fe-9da8-2266ab3a10f0",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
