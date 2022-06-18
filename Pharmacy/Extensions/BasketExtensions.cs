@@ -1,4 +1,5 @@
-﻿using Pharmacy.DTOs;
+﻿using Microsoft.EntityFrameworkCore;
+using Pharmacy.DTOs;
 using Pharmacy.Entities;
 using System.Linq;
 
@@ -23,6 +24,11 @@ namespace Pharmacy.Extensions
                     Quantity = item.Quantity
                 }).ToList()
             };
+        }
+
+        public static IQueryable<Basket> RetrieveBasketWithItems(this IQueryable<Basket> query, string buyerId)
+        {
+            return query.Include(i => i.Items).ThenInclude(p => p.Product).Where(b => b.BuyerId == buyerId);
         }
     }
 }

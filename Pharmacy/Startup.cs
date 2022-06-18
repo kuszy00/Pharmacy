@@ -69,7 +69,7 @@ namespace Pharmacy
             {
                 opt.User.RequireUniqueEmail = true;
             })
-                    .AddRoles<IdentityRole>()
+                    .AddRoles<Role>()
                     .AddEntityFrameworkStores<StoreContext>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(opt =>
