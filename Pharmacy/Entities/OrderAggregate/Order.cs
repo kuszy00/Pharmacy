@@ -13,6 +13,7 @@ namespace Pharmacy.Entities.OrderAggregate
         public float Subtotal { get; set; }
         public float DeliveryFee { get; set; }
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
+        public string PaymentIntentId { get; set; }
 
         public float GetTotal()
         {

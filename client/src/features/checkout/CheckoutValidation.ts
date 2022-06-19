@@ -9,5 +9,7 @@ export const validationSchema = [
         zip: yup.string().required('Zip code is required'),
     }),
     yup.object(),
-    yup.object()
+    yup.object({
+        nameOnCard: yup.string().required('Name on card is required')
+    })
 ]

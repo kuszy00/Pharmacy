@@ -47,7 +47,7 @@ export default function Orders() {
                             <TableCell component="th" scope="row">
                                 {order.id}
                             </TableCell>
-                            <TableCell align="right">{order.total}zł</TableCell>
+                            <TableCell align="right">{order.total.toFixed(2)}zł</TableCell>
                             <TableCell align="right">{order.orderDate.split('T')[0]}</TableCell>
                             <TableCell align="right">{order.orderStatus}</TableCell>
                             <TableCell align="right">

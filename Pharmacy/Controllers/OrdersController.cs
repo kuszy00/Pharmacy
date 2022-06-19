@@ -19,7 +19,6 @@ namespace Pharmacy.Controllers
         public OrdersController(StoreContext context)
         {
             _context = context;
-
         }
 
         [HttpGet]
@@ -80,7 +79,8 @@ namespace Pharmacy.Controllers
                 BuyerId = User.Identity.Name,
                 ShippingAddress = orderDto.ShippingAddress,
                 Subtotal = subtotal,
-                DeliveryFee = deliveryFee
+                DeliveryFee = deliveryFee,
+                PaymentIntentId = basket.PaymentIntentId,
             };
 
             _context.Orders.Add(order);
