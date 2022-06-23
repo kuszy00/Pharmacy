@@ -11,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using Pharmacy.Data;
 using Pharmacy.Entities;
 using Pharmacy.Middleware;
+using Pharmacy.RequestHelpers;
 using Pharmacy.Services;
 using System.Collections.Generic;
 using System.Text;
@@ -29,8 +30,8 @@ namespace Pharmacy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pharmacy", Version = "v1" });
@@ -86,6 +87,7 @@ namespace Pharmacy
             services.AddAuthorization();
             services.AddScoped<TokenService>();
             services.AddScoped<PaymentService>();
+            services.AddScoped<ImageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

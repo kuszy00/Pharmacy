@@ -16,13 +16,13 @@ export default function ProductCard({product}: Props) {
     return (
         <Card>
             <CardMedia
-                sx={{ height:160, backgroundSize: 'contain', bgcolor: 'white'}}
+                sx={{ height:120, backgroundSize: 'contain', bgcolor: 'white'}}
                 image={product.pictureUrl}
                 title={product.name}
             />
             <CardContent>
-                <Typography gutterBottom color='primary' variant="h6">
-                    {product.name}
+                <Typography gutterBottom color='primary' variant="h1">
+                    <Button component={Link} to={`/catalog/${product.id}`} size="large" sx={{fontSize: 16}}>{product.name}</Button>
                 </Typography>
                 <Typography gutterBottom color='secondary' variant="h6">
                     {product.price}zł
@@ -35,7 +35,6 @@ export default function ProductCard({product}: Props) {
                 <LoadingButton loading={status.includes('pendingAddItem'+product.id)} onClick={() => dispatch(addBasketItemAsync({productId: product.id}))} size="small">
                     Add to cart
                 </LoadingButton>
-                <Button component={Link} to={`/catalog/${product.id}`} size="small">Learn More</Button>
             </CardActions>
         </Card>
     )

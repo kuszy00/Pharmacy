@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +18,7 @@ namespace Pharmacy.Controllers
         private readonly PaymentService _paymentService;
         private readonly StoreContext _context;
         private readonly IConfiguration _config;
+
         public PaymentsController(PaymentService paymentService, StoreContext context, IConfiguration config)
         {
             _config = config;

@@ -35,7 +35,7 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
     const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0)
 
     return (
-        <AppBar position="static" sx={{ mb: 4 }}>
+        <AppBar position="static">
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box>
                     <Typography component={NavLink} to='/' key='/' exact sx={navStyles}>
@@ -51,6 +51,11 @@ export default function Header({ darkMode, handleThemeChange }: Props) {
                                 {title.toUpperCase()}
                             </ListItem>
                         ))}
+                        {user && user.roles?.includes('Admin') &&
+                        <ListItem component={NavLink} to={'/inventory'}
+                            sx={navStyles}>
+                            INVENTORY
+                        </ListItem>}
                     </List>
                 </Box>
 
